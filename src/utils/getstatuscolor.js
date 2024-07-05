@@ -9,4 +9,4 @@ const getstatuscolor = (status) => {
   }
 };
 
-export default getstatuscolor
+export default getstatuscolor;

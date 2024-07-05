@@ -12,7 +12,7 @@ const App = () => {
       <h1 className="text-8xl font-extrabold mt-5 text-center mb-4">
         A simple todo list <br />
         <span>
-          <span className="text-blue-500 border-b-4 border-blue-500">
+          <span className="  ">
             manage it all
           </span>
         </span>
@@ -20,9 +20,9 @@ const App = () => {
       <div className="flex mt-12 justify-center">
         <CreateTask tasks={tasks} setTasks={setTasks} />
       </div>
-      <div style={{ width: "70%" }} className="mt-6">
+      <div  style={{ width: "75%" }} className="mt-6">
         <ListTask tasks={tasks} setTasks={setTasks} />
-      </div>
+      </div >
     </div>
   );
 };

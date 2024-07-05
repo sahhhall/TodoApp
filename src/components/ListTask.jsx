@@ -5,6 +5,18 @@ const ListTask = ({ tasks, setTasks }) => {
   const [todos, setTodos] = useState([]);
   const [inProgress, setInProgress] = useState([]);
   const [completed, setClosed] = useState([]);
+  const [activecard, setActiveCard] = useState(null);
+  const onDrop = (status) => {
+    let d = completed.some((s) => s.id === activecard)
+    if (d) console.log("fuck you")
+    console.log(status,"hiiii")
+    const updatedTasks = tasks.map(task =>
+      task.id === activecard ? { ...task, status: status } : task
+    );
+    localStorage.setItem("tasks", JSON.stringify(updatedTasks));
+    setTasks(updatedTasks);
+    setActiveCard(null);
+  };
   useEffect(() => {
     const todos = tasks?.filter((task) => task.status === "todo");
     const inProgress = tasks?.filter((task) => task.status === "inprogress");
@@ -28,7 +40,7 @@ const ListTask = ({ tasks, setTasks }) => {
   };
   const status = ["todo", "inprogress", "completed"];
   return (
-    <div className="flex gap-3 justify-between ">
+    <div className="flex gap-7 justify-between  ">
       {status.map((status, index) => (
         <Section
           key={index}
@@ -36,6 +48,8 @@ const ListTask = ({ tasks, setTasks }) => {
           listtask={getTasksByStatus(status)}
           tasks={tasks}
           setTasks={setTasks}
+          setActiveCard={setActiveCard}
+          onDrop={onDrop}
         />
       ))}
     </div>

@@ -5,20 +5,11 @@
 ::-webkit-scrollbar {
     width: 6px;
 }
+.task-card:active {
+    opacity: 0.2;
+    border: .31px solid black;
+}
  
-
-/* ::-webkit-scrollbar-track {
-    background: #e4e4e4;
-    border-radius: 1111px;
-} */
- 
-
-/* ::-webkit-scrollbar-thumb {
-    background: #000;
-    border-radius: 5px;
-} */
- 
-
 ::-webkit-scrollbar-thumb:hover {
     background: #1d1d1d;
 }
